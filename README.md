@@ -7,16 +7,17 @@
 회상 대화를 통해 인지·정서 상태를 자연스럽게 평가하고, 보호자에게 이상 징후를 리포트 및 스토리 형태로 제공하는 것을 목표로 합니다.<br/>
 
 **본 시스템은 다음과 같은 기술적 구성요소로 이루어져 있습니다**
-- LLM 기반 GPT-4o: 대화 내용 요약 및 감정 분석, 정서 이상 탐지
-- Xception 기반 CNN 모델: 음성에서 치매 위험도 분류
+- LLM 기반 GPT-4o : 대화 진행, 대화 내용 요약 및 감정 분석, 정서 이상 탐지
+- STT 및 TTS : 챗봇과의 상호작용을 음성으로 진행
+- Fish-Speech : 파인튜닝된 Voice Cloning 모델을 통해 어르신 목소리의 특성을 반영한 목소리 생성
 - FastAPI + PostgreSQL + Docker 기반 백엔드
 - Azure Virtual Machine 상에서 상시 운영
 
 ## 👀 How does it work?
 
 <div align="center">
-  <img src="./data/요약.png" width="20%" style="margin-right: 10px;" />
-  <img src="./data/대화.png" width="20%" />
+  <img src="./data/대화.png" width="20%" style="margin-right: 10px;" />
+  <img src="./data/요약.png" width="20%" />
   <img src="./data/대화내용.png" width="20%" />
   <img src="./data/리포트.png" width="20%" />
 </div>
@@ -24,6 +25,7 @@
 ## ⚙️ Architecture
 
 <img src="./data/아키텍처.png" style="width: 100%; height: auto;" />
+<img src="./data/내부처리.png" style="width: 100%; height: auto;" />
 
 
 ## 🛠️ 기술 스택
@@ -77,12 +79,12 @@
 
 
 ## 🎯 주요 기능
-**가족 전용 커뮤니티** : family_id를 활용해 가족 간 회상 콘텐츠를 비공개로 공유하고 열람할 수 있는 공간 제공<br/>
-**보호자 알림 리포트 제공** : 대화 요약, 감정 상태, 발화 특성 등 분석 리포트 생성<br/>
-**스토리텔링 생성** : 대화 데이터를 활용하여 사진에 대한 스토리텔링 생성<br/>
-**Voice Cloning** : 환자의 음성데이터를 cloning하여 환자의 목소리로 스토리 읽어줌<br/>
-**회상 대화 기반 치매 조기 탐지** : 사진 기반 회상 대화를 통해 자연스러운 대화를 유도
-- voice -> text -> gpt -> text -> voice로 이루어지는 파이프라인을 통한 자연스러운 음성 대화 로직 구현
+- **가족 전용 커뮤니티** : family_id를 활용해 가족 간 회상 콘텐츠를 비공개로 공유하고 열람할 수 있는 공간 제공<br/>
+- **보호자 알림 리포트 제공** : 대화 요약, 감정 상태, 발화 특성 등 분석 리포트 생성<br/>
+- **스토리텔링 생성** : 대화 데이터를 활용하여 사진에 대한 스토리텔링 생성<br/>
+- **Voice Cloning** : 환자의 음성데이터를 cloning하여 환자의 목소리로 스토리 읽어줌<br/>
+- **회상 대화 기반 치매 조기 탐지** : 사진 기반 회상 대화를 통해 자연스러운 대화를 유도
+  - voice -> text -> gpt -> text -> voice로 이루어지는 파이프라인을 통한 자연스러운 음성 대화 로직 구현
 
 ### 🎥 시연영상 
 - [📷 홍보영상 보기!](https://github.com/hongwon1031/MS_AI_project_3/blob/main/data/%EC%8B%9C%EC%97%B0%EC%9E%90%EB%A5%B8%EA%B1%B0.mp4)
