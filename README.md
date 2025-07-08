@@ -14,8 +14,8 @@
 ## 👀 How does it work?
 
 <div align="center">
-  <img src="./images/demo1.gif" width="45%" style="margin-right: 10px;" />
-  <img src="./images/demo2.gif" width="45%" />
+  <img src="./data/요약.png" width="45%" style="margin-right: 10px;" />
+  <img src="./data/리포트.png" width="45%" />
 </div>
 
 ## ⚙️ Architecture
