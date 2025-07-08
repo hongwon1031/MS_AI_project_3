@@ -17,8 +17,8 @@
 
 <div align="center">
   <img src="./data/대화.png" width="20%" style="margin-right: 10px;" />
-  <img src="./data/요약.png" width="20%" />
-  <img src="./data/대화내용.png" width="20%" />
+  <img src="./data/요약.png" width="20%" style="margin-right: 10px;" />
+  <img src="./data/대화내용.png" width="20%" style="margin-right: 10px;" />
   <img src="./data/리포트.png" width="20%" />
 </div>
 
@@ -93,3 +93,24 @@
 ~~[카카오톡 채널](http://pf.kakao.com/_QfZwn) 혹은 카카오톡에서 '찾아줘! 홈즈' 검색~~
 - azure 리소스 삭제로 인해 현재 사용 불가능
 
+1. 모델 가중치 다운로드
+  ```
+  huggingface-cli download fishaudio/openaudio-s1-mini --local-dir checkpoints/openaudio-s1-mini
+  ```
+
+2. llama 가중치 변경
+  `fastapi-app\fish-speech\fish_module.py` 에서 `llama_checkpoint_path` 변수를 파인튜닝된 폴더로 변경
+  ```
+  llama_checkpoint_path = "checkpoints/fish-speech-1.5-yth-lora-8000"
+  ```
+
+3. 백엔드 서버 실행
+  ```
+  docker-compose up build
+  ```
+
+4. apk파일 생성
+  ```
+  flutter build apk --release
+  ```
+  `build\app\outputs\apk\debug\app-debug.apk` 파일을 통해 서버 실행
