@@ -1,5 +1,6 @@
-# 공공임대주택 정보 안내 도우미 – 찾아줘 홈즈 🏠
-<img src="./images/홈즈.png" width="800" height="450">
+# 메멘토 박스
+<img src="./data/mainimg.png" width="800" height="450">
+
 
 ## 📌 프로젝트 개요
 본 프로젝트는 어르신의 과거 사진을 기반으로 회상 대화를 유도하고, 해당 음성 및 텍스트 데이터를 분석하여 치매의 조기 징후를 비침습적으로 탐지하는 AI 기반 정서 돌봄 서비스입니다.<br/>
@@ -19,23 +20,36 @@
 
 ## ⚙️ Architecture
 
-<img src="./images/architecture.png" style="width: 100%; height: auto;" />
+<img src="./data/아키텍처.png" style="width: 100%; height: auto;" />
 
 
 ## 🛠️ 기술 스택
-<img src="https://img.shields.io/badge/Azure OpenAI-0078D4?style=flat-square&logo=OpenAI&logoColor=white"/> <img src="https://img.shields.io/badge/Azure Document Intelligence-0078D4?style=flat-square&logo=&logoColor=white"/> <img src="https://img.shields.io/badge/Azure AI Search-0078D4?style=flat-square&logo=&logoColor=white"/> <img src="https://img.shields.io/badge/Azure Virtual Machine-0078D4?style=flat-square&logo=&logoColor=white"/> <br/><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/>
-<img src="https://img.shields.io/badge/flask-000000?style=flat-square&logo=flask&logoColor=white"/> <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white"/> <img src="https://img.shields.io/badge/ngrok-1F1E37?style=flat-square&logo=ngrok&logoColor=white"/> <img src="https://img.shields.io/badge/Kakaotalk-FFCD00?style=flat-square&logo=kakaotalk&logoColor=white"/> 
+<img src="https://img.shields.io/badge/Azure OpenAI-0078D4?style=flat-square&logo=OpenAI&logoColor=white"/> <img src="https://img.shields.io/badge/Azure Blob Storage-0078D4?style=flat-square&logo=&logoColor=white"/> <img src="https://img.shields.io/badge/Azure Speech-0078D4?style=flat-square&logo=&logoColor=white"/> <img src="https://img.shields.io/badge/Azure Virtual Machine-0078D4?style=flat-square&logo=&logoColor=white"/> <br/><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/>
+<img src="https://img.shields.io/badge/Pytorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white"/>
+<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/>
+<img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white"/>
+<img src="https://img.shields.io/badge/Fastapi-009688?style=flat-square&logo=fastapi&logoColor=white"/> 
+<img src="https://img.shields.io/badge/postgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white"/> 
+<img src="https://img.shields.io/badge/ngrok-1F1E37?style=flat-square&logo=ngrok&logoColor=white"/> 
+<img src="https://img.shields.io/badge/NGINX-009639?style=flat-square&logo=nginx&logoColor=white"/>
+<img src="https://img.shields.io/badge/Github Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white"/>
+<img src="https://img.shields.io/badge/Kakao SDK-FFCD00?style=flat-square&logo=kakaotalk&logoColor=white"/> 
 
 
-- **Azure OpenAI** : embedding 모델을 통한 벡터화 및 GPT-4 기반 언어 모델을 사용해 자연어 응답 생성
-- **Azure Document Intelligence Layout** : PDF을 Markdown 파일로 변환
-- **Azure AI Search** : 벡터 기반 유사도 검색으로 관련 공고문 청크를 반환
-- **Azure VM** : Python 기반 Flask 서버를 가상머신에서 상시 운영
-- **Flask** : 로컬 서버 생성
-- **Ngrok** : 로컬/VM 서버를 카카오톡 챗봇에서 접근 가능하도록 터널링
-- **LangChain**: 텍스트 분할, 임베딩 및 RAG 파이프라인 구성
-- **Python**: 전체 백엔드 및 데이터 전처리 로직 작성
-- **Kakao i 오픈빌더**: 사용자 인터페이스 챗봇 구성
+- **Azure OpenAI GPT-4o** : LLM 기반 회상 대화 질문 생성 및 회상 스토리 재구성
+- **Fish-speech** : 파인튜닝된 노인 음성 합성 모델로, 감성적인 회상 대화를 실제 노인 목소리처럼 구현
+- **Azure Speech**
+    - STT: 어르신의 음성 발화를 텍스트로 변환해 LLM 입력으로 활용
+    - TTS: GPT 응답 결과를 기본 음성으로 합성 (fish-speech 이전 단계)
+- **Azure Blob Storage** : 이미지, 음성 파일 등 멀티미디어 파일 저장소로 활용
+- **PostgreSQL + SQLAlchemy + Alembic** : 사용자, 가족, 대화, 사진, 리포트 등 서비스 전반의 관계형 데이터 관리 및 마이그레이션 처리
+- **FastAPI + Uvicorn** : 백엔드 API 서버로, 사용자 인증, 음성 처리, 대화 저장 등의 주요 로직 구현
+- **Docker**: astAPI, fish-speech, PostgreSQL 등을 컨테이너화하여 안정적 배포
+- **Flutter**: 사용자용 모바일 앱 구현 (사진 업로드, 음성 대화, 리포트 확인, 커뮤니티 기능 등)
+- **Kakao SDK**: 카카오 로그인 연동 및 사용자 인증 처리
+- **Nginx + Certbot**: 보안 인증서 적용 및 리버스 프록시 서버 설정
+
+
 <br/>
 
 ## 🗂️ 프로젝트 구조
@@ -60,15 +74,14 @@
 
 
 ## 🎯 주요 기능
-> **가족 전용 커뮤니티** : family_id를 활용해 가족 간 회상 콘텐츠를 비공개로 공유하고 열람할 수 있는 공간 제공
-> **회상 대화 기반 치매 조기 탐지** : 사진 기반 회상 대화를 통해 자연스러운 대화를 유도
+**가족 전용 커뮤니티** : family_id를 활용해 가족 간 회상 콘텐츠를 비공개로 공유하고 열람할 수 있는 공간 제공
+**회상 대화 기반 치매 조기 탐지** : 사진 기반 회상 대화를 통해 자연스러운 대화를 유도
 - voice -> text -> gpt -> text -> voice로 이루어지는 파이프라인을 통한 자연스러운 음성 대화 로직 구현
-> **보호자 알림 리포트 제공** : 대화 요약, 감정 상태, 발화 특성 등 분석 리포트 생성<br/>
-> **스토리텔링 생성** : 대화 데이터를 활용하여 사진에 대한 스토리텔링 생성<br/>
-> **voice cloning** : 환자의 음성데이터를 cloning하여 환자의 목소리로 스토리 읽어줌<br/>
+**보호자 알림 리포트 제공** : 대화 요약, 감정 상태, 발화 특성 등 분석 리포트 생성<br/>
+**스토리텔링 생성** : 대화 데이터를 활용하여 사진에 대한 스토리텔링 생성<br/>
+**voice cloning** : 환자의 음성데이터를 cloning하여 환자의 목소리로 스토리 읽어줌<br/>
 
 ### 🎥 시연영상 
-- [📷 시연영상 보기!](https://github.com/hongwon1031/MS_AI_project_2/blob/main/%EC%B9%B4%ED%86%A1%EC%8B%9C%EC%97%B0%EC%98%81%EC%83%81.mp4)<br/>
 - [📷 홍보영상 보기!](https://github.com/hongwon1031/MS_AI_project_2/blob/main/%EC%8B%9C%EC%97%B0%EC%98%81%EC%83%81.mp4)
 ### 자세한 내용은 [[복덕방7]발표.PDF](https://github.com/hongwon1031/MS_AI_project_2/blob/main/%5B%EB%B3%B5%EB%8D%95%EB%B0%A97%5D%EB%B0%9C%ED%91%9C.pdf) 참고
 ### 🐶 How to use?
