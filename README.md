@@ -112,3 +112,5 @@
   ```
   `build\app\outputs\apk\debug\app-debug.apk` 파일을 통해 서버 실행
 
+### Reference
+- https://github.com/fishaudio/fish-speech
