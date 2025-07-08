@@ -5,6 +5,7 @@
 ## 📌 프로젝트 개요
 > 본 프로젝트는 어르신의 과거 사진을 기반으로 회상 대화를 유도하고, 해당 음성 및 텍스트 데이터를 분석하여 치매의 조기 징후를 비침습적으로 탐지하는 AI 기반 정서 돌봄 서비스입니다.<br/>
 회상 대화를 통해 인지·정서 상태를 자연스럽게 평가하고, 보호자에게 이상 징후를 리포트 및 스토리 형태로 제공하는 것을 목표로 합니다.<br/>
+
 **본 시스템은 다음과 같은 기술적 구성요소로 이루어져 있습니다**
 - LLM 기반 GPT-4o: 대화 내용 요약 및 감정 분석, 정서 이상 탐지
 - Xception 기반 CNN 모델: 음성에서 치매 위험도 분류
@@ -14,8 +15,10 @@
 ## 👀 How does it work?
 
 <div align="center">
-  <img src="./data/요약.png" width="45%" style="margin-right: 10px;" />
-  <img src="./data/리포트.png" width="45%" />
+  <img src="./data/요약.png" width="20%" style="margin-right: 10px;" />
+  <img src="./data/대화.png" width="20%" />
+  <img src="./data/대화내용.png" width="20%" />
+  <img src="./data/리포트.png" width="20%" />
 </div>
 
 ## ⚙️ Architecture
