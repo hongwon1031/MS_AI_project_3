@@ -96,8 +96,8 @@
   ```
   huggingface-cli download fishaudio/openaudio-s1-mini --local-dir checkpoints/openaudio-s1-mini
   ```
-2. llama 가중치 변경
-  [파인튜닝 가중치 다운](https://drive.google.com/file/d/1yfSb8XzA4_2eyeGVyMGNqnSoboJuIGRA/view?usp=sharing)
+2. llama 가중치 변경 <br/>
+  [파인튜닝 가중치 다운](https://drive.google.com/file/d/1yfSb8XzA4_2eyeGVyMGNqnSoboJuIGRA/view?usp=sharing)<br/>
   `fastapi-app\fish-speech\fish_module.py` 에서 `llama_checkpoint_path` 변수를 파인튜닝된 폴더로 변경
   ```
   llama_checkpoint_path = "checkpoints/fish-speech-1.5-yth-lora-8000"
