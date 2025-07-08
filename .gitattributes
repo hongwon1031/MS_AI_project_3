@@ -1,1 +1,2 @@
 *.pdf filter=lfs diff=lfs merge=lfs -text
+data/3차[[:space:]]프로젝트[[:space:]]PPT.pdf filter=lfs diff=lfs merge=lfs -text

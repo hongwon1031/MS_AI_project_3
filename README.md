@@ -75,14 +75,14 @@
 
 ## 🎯 주요 기능
 **가족 전용 커뮤니티** : family_id를 활용해 가족 간 회상 콘텐츠를 비공개로 공유하고 열람할 수 있는 공간 제공
-**회상 대화 기반 치매 조기 탐지** : 사진 기반 회상 대화를 통해 자연스러운 대화를 유도
-- voice -> text -> gpt -> text -> voice로 이루어지는 파이프라인을 통한 자연스러운 음성 대화 로직 구현
 **보호자 알림 리포트 제공** : 대화 요약, 감정 상태, 발화 특성 등 분석 리포트 생성<br/>
 **스토리텔링 생성** : 대화 데이터를 활용하여 사진에 대한 스토리텔링 생성<br/>
 **voice cloning** : 환자의 음성데이터를 cloning하여 환자의 목소리로 스토리 읽어줌<br/>
+**회상 대화 기반 치매 조기 탐지** : 사진 기반 회상 대화를 통해 자연스러운 대화를 유도
+- voice -> text -> gpt -> text -> voice로 이루어지는 파이프라인을 통한 자연스러운 음성 대화 로직 구현
 
 ### 🎥 시연영상 
-- [📷 홍보영상 보기!](https://github.com/hongwon1031/MS_AI_project_2/blob/main/%EC%8B%9C%EC%97%B0%EC%98%81%EC%83%81.mp4)
+- [📷 홍보영상 보기!](https://github.com/hongwon1031/MS_AI_project_3/blob/main/data/%EC%8B%9C%EC%97%B0%EC%9E%90%EB%A5%B8%EA%B1%B0.mp4)
 ### 자세한 내용은 [[복덕방7]발표.PDF](https://github.com/hongwon1031/MS_AI_project_2/blob/main/%5B%EB%B3%B5%EB%8D%95%EB%B0%A97%5D%EB%B0%9C%ED%91%9C.pdf) 참고
 ### 🐶 How to use?
 ~~[카카오톡 채널](http://pf.kakao.com/_QfZwn) 혹은 카카오톡에서 '찾아줘! 홈즈' 검색~~
