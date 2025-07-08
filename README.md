@@ -91,7 +91,6 @@
 ### 자세한 내용은 [3차 프로젝트 PPT.pdf](https://github.com/hongwon1031/MS_AI_project_3/blob/main/data/3%EC%B0%A8%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20PPT.pdf) 참고
 ### 🐶 How to use?
 <p>$\huge{\rm{\color{red}\textbf{azure\ 리소스\ 삭제로\ 인해\ 현재\ 사용\ 불가능}}}$</p>
-❌ **azure 리소스 삭제로 인해 현재 사용 불가능**
 
 1. 모델 가중치 다운로드
   ```
