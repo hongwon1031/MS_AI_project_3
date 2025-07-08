@@ -90,27 +90,25 @@
 - [📷 홍보영상 보기!](https://github.com/hongwon1031/MS_AI_project_3/blob/main/data/%EC%8B%9C%EC%97%B0%EC%9E%90%EB%A5%B8%EA%B1%B0.mp4)
 ### 자세한 내용은 [3차 프로젝트 PPT.pdf](https://github.com/hongwon1031/MS_AI_project_3/blob/main/data/3%EC%B0%A8%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20PPT.pdf) 참고
 ### 🐶 How to use?
-~~[카카오톡 채널](http://pf.kakao.com/_QfZwn) 혹은 카카오톡에서 '찾아줘! 홈즈' 검색~~
-- azure 리소스 삭제로 인해 현재 사용 불가능
-
+<s>
 1. 모델 가중치 다운로드
   ```
   huggingface-cli download fishaudio/openaudio-s1-mini --local-dir checkpoints/openaudio-s1-mini
   ```
-
 2. llama 가중치 변경
+  [파인튜닝 가중치 다운](https://drive.google.com/file/d/1yfSb8XzA4_2eyeGVyMGNqnSoboJuIGRA/view?usp=sharing)
   `fastapi-app\fish-speech\fish_module.py` 에서 `llama_checkpoint_path` 변수를 파인튜닝된 폴더로 변경
   ```
   llama_checkpoint_path = "checkpoints/fish-speech-1.5-yth-lora-8000"
   ```
-
 3. 백엔드 서버 실행
   ```
   docker-compose up build
   ```
-
 4. apk파일 생성
   ```
   flutter build apk --release
   ```
   `build\app\outputs\apk\debug\app-debug.apk` 파일을 통해 서버 실행
+</s>
+- azure 리소스 삭제로 인해 현재 사용 불가능
